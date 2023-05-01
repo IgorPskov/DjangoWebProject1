@@ -1,0 +1,25 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="row">
+    <h1>Полезные ссылки</h1>
+    <div class="col-md-4">
+        <h2>Покупка/продажа автомобилей</h2>
+        <p>
+            Авто.ру — сайт с надёжными продавцами и ответственными покупателями · Огромный выбор авто. Удобный поиск. Авто новые и с пробегом. Ежедневные обновления
+        </p>
+        <p> <button><img id="autoru" src="../../static/app/content/auto.png" class="btn btn-default" onclick="location.href = 'https://auto.ru/'"> &raquo;</button></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Покупка запчастей на автомобиль</h2>
+        <p>Интернет-магазин Exist.ru - крупнейший в России портал по продаже автозапчастей для автомобилей. </p>
+        <p><button><img id="exist" src="../../static/app/content/exist.png" class="btn btn-default" onclick="location.href = 'https://exist.ru/'" /> &raquo;</button></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Технические характеристики автомобилей</h2>
+        <p>Огромное количество марок и моделей. Узнайте габариты, расход топлива, особенности двигателей, подвесок и прочие характеристики автомобилей.</p>
+        <p> <button><img id="avtomarket" src="../../static/app/content/avtomarket.png" class="btn btn-default" onclick="location.href = 'https://avtomarket.ru/catalog/'">&raquo;</button></p>
+    </div>
+</div>
+{% endblock %}

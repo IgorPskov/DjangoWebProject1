@@ -1,0 +1,15 @@
+{% extends "app/layout.html" %}
+{% block content %}
+<h1>{{ title }} Видеообзор новинок автокомпаний </h1>
+<hr />
+<div>
+    <h2>Mercedes</h2>
+    <VIDEO src="/media/maybach.mp4" controls="controls" width="400" height="300" poster="/media/maybach.jpg"></VIDEO>
+</div>
+<hr />
+<div>
+    <h2>BMW</h2>
+    <VIDEO src="/media/bmw.mp4" controls="controls" width="400" height="300" poster="/media/bmw.jpg"></VIDEO>
+</div>
+
+{% endblock %}

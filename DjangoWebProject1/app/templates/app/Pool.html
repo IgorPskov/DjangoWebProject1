@@ -1,0 +1,96 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% if form != None %}
+<br><h2>Отправьте пожалуйста заполненную форму обратной связи</h2>
+ <div>
+     <form method="post">
+         {% csrf_token %}
+         <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+         {{ form.name }}<br><br>
+         <label for="{{ form.birth.id_for_label }}">{{ form.birth.label }}:</label>
+         {{ form.birth }}<br><br>
+         <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }}:</label>
+         {{ form.gender }}<br><br>
+         <label for="{{ form.using.id_for_label }}">{{ form.using.label }}:</label>
+         {{ form.using }}<br><br>
+         <label for="{{ form.auto.id_for_label }}">{{ form.auto.label }}:</label>
+         {{ form.auto }}<br><br>
+         <label for="{{ form.mark_info.id_for_label }}">{{ form.mark_info.label }}:</label>
+         {{ form.mark_info }}<br><br>
+         <label for="{{ form.mark_comfort.id_for_label }}">{{ form.mark_comfort.label }}:</label>
+         {{ form.mark_comfort }}<br><br>
+         <label for="{{ form.mark_design.id_for_label }}">{{ form.mark_design.label }}:</label>
+         {{ form.mark_design }}<br><br>
+         <label for="{{ form.mark_func.id_for_label }}">{{ form.mark_func.label }}:</label>
+         {{ form.mark_func }}<br><br>
+         <label for="{{ form.wish.id_for_label }}">{{ form.wish.label }}:</label>
+         {{ form.wish }}<br><br>
+         <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }}:</label>
+         {{ form.notice }}<br><br>
+         <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+         {{ form.email }}<br><br>
+         <input type="submit" id="submit" value="Отправить" style="color:darkturquoise">
+
+         <script>
+             const elem = document.getElementById('submit');
+             elem.addEventListener('mouseover', function () {
+                 elem.style.color = "orange";
+             });
+             elem.addEventListener('mouseout', function () {
+                 elem.style.color = "darkturquoise";
+             });
+
+             const elem2 = document.getElementById('id_name');
+             elem2.onfocus = function () {
+                 elem2.style.backgroundColor = "ivory";
+             };
+             elem2.onblur = function () {
+                 elem2.style.backgroundColor = "white";
+             };
+
+            const elem3 = document.getElementById('id_birth');
+             elem3.onfocus = function () {
+                 elem3.style.backgroundColor = "ivory";
+             };
+             elem3.onblur = function () {
+                 elem3.style.backgroundColor = "white";
+             };
+
+             const elem4 = document.getElementById('id_wish');
+             elem4.onfocus = function () {
+                 elem4.style.backgroundColor = "ivory";
+             };
+             elem4.onblur = function () {
+                 elem4.style.backgroundColor = "white";
+             };
+
+             const elem5 = document.getElementById('id_email');
+             elem5.onfocus = function () {
+                 elem5.style.backgroundColor = "ivory";
+             };
+             elem5.onblur = function () {
+                 elem5.style.backgroundColor = "white";
+             };
+         </script>
+     </form>
+ </div>
+{% else %}
+ <br><h2>Благодарим за обратную связь!</h2>
+ <h3>Вы сообщили следующее:</h3>
+ <ul>
+     <li><span>Имя:</span>{{ data.name }}</li>
+     <li><span>Дата рождения:</span>{{ data.birth }}</li>
+     <li><span>Пол:</span>{{ data.gender }}</li>
+     <li><span>Использование других новостных сайтов:</span>{{ data.using }}</li>
+     <li><span>Наличие собственного автомобиля:</span>{{ data.auto }}</li>
+     <li><span>Оценка информативности сайта:</span>{{ data.mark_info }}</li>
+     <li><span>Оценка удобства сайта:</span>{{ data.mark_comfort }}</li>
+     <li><span>Оценка дизайна сайта:</span>{{ data.mark_design }}</li>
+     <li><span>Оценка функционала сайта:</span>{{ data.mark_func }}</li>
+     <li><span>Пожелания по улучшению сайта:</span>{{ data.wish }}</li>
+     <li><span>Получение уведомлений о свежих новостях:</span>{{ data.notice }}</li>
+     <li><span>Ваш e-mail:</span>{{ data.email }}</li>
+ </ul>
+{% endif %}
+{% endblock %}
